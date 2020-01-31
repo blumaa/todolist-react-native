@@ -1,17 +1,13 @@
-import React from 'react';
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity
-} from 'react-native';
+import React from 'react'
+import {StyleSheet, TouchableOpacity, Text} from 'react-native';
 
-const TodoItem = ({item, clickHandler }) => (
-  <TouchableOpacity onPress={()=> clickHandler(item.key)}>
-    <Text style={styles.item}>{item.text}</Text>
-  </TouchableOpacity>
-);
-
-export default TodoItem;
+export default function TodoItem({ pressHandler, item }) {
+  return (
+    <TouchableOpacity onPress={() => pressHandler(item.key)}>
+      <Text style={styles.item}>{item.text}</Text>
+    </TouchableOpacity>
+  )
+}
 
 const styles = StyleSheet.create({
   item: {
@@ -19,7 +15,8 @@ const styles = StyleSheet.create({
     marginTop: 16,
     borderColor: '#bbb',
     borderWidth: 1,
-    borderStyle: 'dashed',
-    borderRadius: 10
-  },
+    borderStyle: "dashed",
+    borderRadius: 1,
+    borderRadius: 10,
+  }
 });
