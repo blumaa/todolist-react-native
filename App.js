@@ -17,6 +17,8 @@ export default function App() {
   };
 
   const submitHandler = (text) => {
+    if (text.length > 3) {
+
       setTodos(prevTodos => {
         return [
           { text, key: Math.random().toString() },
@@ -24,6 +26,11 @@ export default function App() {
         ];
       });
 
+    } else {
+      Alert.alert('OOPS', 'todos must be over three chars long', [
+        {text: 'understood', onPress: () => console.log('alert closed')}
+      ])
+    }
   };
 
   return (
